@@ -183,7 +183,7 @@ iframe{
     width: 4rem;
 }
 
-.menu-lista-secciones img{
+.cerrar{
     margin: 1rem 0;
     width: 3rem;
 }
@@ -197,7 +197,7 @@ iframe{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 76rem;
+    max-width: 100rem;
     margin: 0 auto;
 }
 
@@ -369,6 +369,20 @@ iframe{
 
     .buscador-cont input{
         font-size: 2rem;
+    }
+
+    .menu-lista-secciones{
+        flex-direction: row;
+        padding: 1.5rem;
+    }
+
+    .menu-lista-secciones a{
+        margin-right: 1.5rem;
+    }
+
+    .cerrar{
+        margin: unset;
+        margin-left: auto;
     }
 
     .menu-lista-home img{

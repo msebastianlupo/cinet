@@ -156,9 +156,9 @@ class Datos {
      */
     alternarGuardado(e, json){
         let almacen = localStorage.getItem("cinet");
+        let agregar = true;
         if(almacen?.length){
-            let almacenParse = JSON.parse(almacen),
-            agregar = true;
+            let almacenParse = JSON.parse(almacen);
             for(let n = 0; n < almacenParse.length; n++){
                 if(almacenParse[n].imdbID === json.imdbID){
                     almacenParse.splice(n, 1);
@@ -173,7 +173,6 @@ class Datos {
             }
             if(agregar){
                 almacenParse.unshift(json);
-                e.target.classList.add("opacidad-5");
             }
             let almacenString = JSON.stringify(almacenParse);
             localStorage.setItem("cinet", almacenString);
@@ -182,6 +181,9 @@ class Datos {
             arrAlmacen.push(json);
             let arrAlmacenString = JSON.stringify(arrAlmacen);
             localStorage.setItem("cinet", arrAlmacenString);
+        }
+        if(agregar){
+            e.target.classList.add("opacidad-5");
         }
     }
 
