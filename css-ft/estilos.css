@@ -29,6 +29,9 @@ ul{
 }
 
 nav{
+    position: fixed;
+    width: 100%;
+    top: 0;
     background: #333333;
     padding: 1rem;
 }
@@ -52,7 +55,7 @@ a:hover{
 }
 
 main{
-    margin-top: 10rem;
+    margin-top: 15rem;
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -169,7 +172,6 @@ iframe{
 
 .buscador-cont input{
     width: calc(100% - 3rem);
-    max-width: 76rem;
     margin-right: 3rem;
     padding: 1.5rem;
     border-radius: 0.5rem;
@@ -435,7 +437,7 @@ iframe{
 
     .menu-lista-home img{
         height: 5rem;
-        margin-top: 1rem;
+        margin: 1rem 0;
         padding: 1rem;
     }
 
