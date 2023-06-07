@@ -1,6 +1,6 @@
 'use strict'
 
-const CACHE_NAME = "version1";
+const CACHE_NAME = "v1";
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-sw.js');
 
