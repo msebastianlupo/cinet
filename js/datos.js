@@ -74,7 +74,7 @@ class Datos {
             this.loadFunc();
         }
         try{
-            fetch(`http://www.omdbapi.com/?apikey=8b43f631&t=${titulo}&type=movie`)
+            fetch(`https://www.omdbapi.com/?apikey=8b43f631&t=${titulo}&type=movie`)
             .then(res => {
                 if(!res.ok){
                     throw new Error("No se pueden conseguir los datos de la película");

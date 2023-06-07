@@ -26,7 +26,7 @@ inputBuscador.addEventListener("keyup", (e) => {
     if(e.key === "Enter" && valor.length){
         if(datos.detectarArchivo("index.html")){
             accion.crearCarga();
-            fetch(`http://www.omdbapi.com/?apikey=8b43f631&s=${valor}&type=movie`)
+            fetch(`https://www.omdbapi.com/?apikey=8b43f631&s=${valor}&type=movie`)
             .then(res => {
                 return res.json();
             })
