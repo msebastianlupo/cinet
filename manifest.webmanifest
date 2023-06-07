@@ -1,7 +1,7 @@
 {
     "theme_color": "#ffffff",
     "background_color": "#333333",
-    "display": "standalone",
+    "display": "minimal-ui",
     "scope": "/",
     "start_url": "index.html",
     "name": "Cinet",
