@@ -37,14 +37,22 @@ nav img{
     cursor: pointer;
 }
 
+.cerrar:hover{
+    opacity: 0.5;
+}
+
 a:link, a:visited, a:active{
     text-decoration: none;
-    color: #000;
+    color: #333;
     font-weight: bold;
 }
 
+a:hover{
+    color: #666;
+}
+
 main{
-    margin-top: 6rem;
+    margin-top: 10rem;
     display: flex;
     flex-direction: column;
     padding: 1rem;
