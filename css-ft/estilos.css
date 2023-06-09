@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    vertical-align: middle;
 }
 
 :root{
@@ -47,7 +48,6 @@ nav img{
 a:link, a:visited, a:active{
     text-decoration: none;
     color: #333;
-    font-weight: bold;
 }
 
 a:hover{
@@ -55,11 +55,10 @@ a:hover{
 }
 
 main{
-    margin-top: 15rem;
     display: flex;
     flex-direction: column;
+    margin-top: 15rem;
     padding: 1rem;
-    justify-content: center;
     align-items: center;
 }
 
@@ -104,6 +103,12 @@ iframe{
     margin-top: 5rem;
     border-radius: 1rem;
     box-shadow: -0.5rem -0.5rem 1rem rgba(150, 150, 150, 0.1), 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+footer{
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-align: center;
 }
 
 /*clases de utilidad*/

@@ -47,8 +47,7 @@ class Datos {
             if(valor.Poster !== "N/A") {
                 img.src = valor.Poster;
             }else{
-                //imagen predeterminada
-                img.src = "";
+                img.src = "img/no-disponible.png";
             }
             img.alt = valor.Title;
             div3.id = valor.imdbID;
@@ -229,7 +228,7 @@ class Datos {
                 if(value.Poster !== "N/A"){
                     div.style.backgroundImage = `url('${value.Poster}')`;
                 }else{
-                    //img predeterminada
+                    img.src = "img/no-disponible.png";
                 }
                 div2.id = value.imdbID;
                 div2.classList.add("div-ficha-cont");
