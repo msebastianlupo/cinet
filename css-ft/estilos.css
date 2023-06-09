@@ -4,11 +4,14 @@
     padding: 0;
     box-sizing: border-box;
     vertical-align: middle;
-    touch-action: manipulation;
 }
 
 :root{
     font-size: 10px;
+}
+
+html{
+    touch-action: manipulation;
 }
 
 body{
