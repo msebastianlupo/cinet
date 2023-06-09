@@ -38,8 +38,6 @@ inputBuscador.addEventListener("keyup", (e) => {
                 json.Response === "True" ? datos.mostrarResultados(json) : console.warn("No se encontró ningún resultado");
                 accion.romperCarga();
             })
-        }else{
-            location.href="index.html";
         }
     }
 })
@@ -65,4 +63,6 @@ if(!localStorage.getItem("cinet-slider")){
     );
 }
 
-
+if(!datos.detectarArchivo("index.html") && !datos.detectarArchivo("guardadas.html") && !datos.detectarArchivo("trailers.html")){
+    location.href = "index.html";
+}
