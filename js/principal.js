@@ -24,7 +24,11 @@ nav.addEventListener("click", (e) => {
 inputBuscador.addEventListener("keyup", (e) => {
     let valor = e.target.value.trim();
     if(e.key === "Enter" && valor.length){
-        if(datos.detectarArchivo("index.html")){
+        if(datos.detectarArchivo("guardadas.html")){
+            datos.filtrarGuardadas(e.target.value, ".div-peli-cont");
+        }else if(datos.detectarArchivo("trailers.html")){
+            youtube.pedirTrailer(valor);
+        }else if(datos.detectarArchivo("index.html")){
             accion.crearCarga();
             fetch(`https://www.omdbapi.com/?apikey=8b43f631&s=${valor}&type=movie`)
             .then(res => {
@@ -34,10 +38,8 @@ inputBuscador.addEventListener("keyup", (e) => {
                 json.Response === "True" ? datos.mostrarResultados(json) : console.warn("No se encontró ningún resultado");
                 accion.romperCarga();
             })
-        }else if(datos.detectarArchivo("guardadas.html")){
-            datos.filtrarGuardadas(e.target.value, ".div-peli-cont");
-        }else if(datos.detectarArchivo("trailers.html")){
-            youtube.pedirTrailer(valor);
+        }else{
+            location.href="index.html";
         }
     }
 })
