@@ -51,7 +51,7 @@ if(datos.detectarArchivo("guardadas.html")){
 }
 
 /*Bienvenida*/
-if(!localStorage.getItem("cinet-slider")){
+if(!localStorage.getItem("cinet-slider") && datos.detectarArchivo("index.html")){
     accion.crearSlider(
         [
             {
