@@ -5,7 +5,6 @@ const accion = new Accion("Cinet | Ventana");
 const datos = new Datos("main", accion.crearCarga, accion.romperCarga);
 const youtube = new Youtube("AIzaSyD-2DWzuRVp9aYdM7rW2k2pNqTyVvY0ops", "main", "#titulo");
 
-accion.crearCarga();
 nav.addEventListener("click", (e) => {
     if(e.target.id === "buscador"){
         accion.quitarClase(".menu-lista-secciones", "top-cero");
@@ -82,7 +81,3 @@ addEventListener("online", () => {
 if(!navigator.onLine){
     datos.detectarArchivo("guardadas.html") || accion.notificar("Sin conexión: solo es posible acceder a las películas guardadas", 4000, "div-noticia-mala");
 }
-
-addEventListener("load", () => {
-    accion.romperCarga();
-})
