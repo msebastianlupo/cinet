@@ -9,7 +9,21 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox
 const precacheados = [
     '/index.html',
     '/guardadas.html',
-    '/trailers.html'
+    '/trailers.html',
+    '/css-ft/estilos.css',
+    '/css-ft/default-sans.ttf',
+    '/img/busqueda.png',
+    '/img/cerrado.png',
+    '/img/guardado.png',
+    '/img/loading.gif',
+    '/img/logo.png',
+    '/img/menu.png',
+    '/img/no-disponible.png',
+    '/img/siguiente.png',
+    '/js/accion.js',
+    '/js/datos.js',
+    '/js/principal.js',
+    '/js/youtube.js'
 ];
   
 self.addEventListener('install', (event) => {
