@@ -14,6 +14,8 @@ class Youtube {
     }
 
     pedirTrailer(consulta){
+        const accion = new Accion("Youtube");
+        accion.crearCarga();
         try{
             fetch(`https://www.googleapis.com/youtube/v3/search?q=${consulta} trailer&part=snippet&type=video&maxResults=1&key=${this.apiKey}`)
             .then(res => {
@@ -24,8 +26,10 @@ class Youtube {
             })
             .then(json => {
                 this.crearReproductor(json);
+                accion.romperCarga();
             })
         }catch(error){
+            accion.romperCarga();
         }
     }
 

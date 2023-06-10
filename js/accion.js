@@ -135,13 +135,18 @@ class Accion {
         let div = document.createElement("div");
         div.classList.add("div-bloqueado");
         document.body.append(div);
+        setTimeout(() => {
+            if(document.querySelector(".div-bloqueado")){
+                this.romperCarga();
+                this.notificar("La operación está demorando, la aplicación va a desbloquearse", 4000, "div-noticia-inconclusa");
+            }
+        }, 15000);
     }
 
     /**
      * destruye la capa creada
      */
     romperCarga(){
-        console.info("Tarea finalizada");
         let divBloqueado = document.querySelector(".div-bloqueado");
         if(divBloqueado){
             divBloqueado.remove();

@@ -1,11 +1,11 @@
 'use strict'
-
 let nav = document.querySelector("nav");
 let inputBuscador = document.querySelector("#input-buscador");
 const accion = new Accion("Cinet | Ventana");
 const datos = new Datos("main", accion.crearCarga, accion.romperCarga);
 const youtube = new Youtube("AIzaSyD-2DWzuRVp9aYdM7rW2k2pNqTyVvY0ops", "main", "#titulo");
 
+accion.crearCarga();
 nav.addEventListener("click", (e) => {
     if(e.target.id === "buscador"){
         accion.quitarClase(".menu-lista-secciones", "top-cero");
@@ -58,7 +58,7 @@ if(!localStorage.getItem("cinet-slider") && datos.detectarArchivo("index.html"))
                 ruta: "img/slide1.png", desc: "Obtené información fácilmente sobre cualquier película"
             },
             {
-                ruta: "img/slide2.png", desc: "Mirá un trailer de inmediato usando el buscador dinámico"
+                ruta: "img/slide2.png", desc: "Cinet tiene un buscador dinámico relacionado a cada sección"
             },
             {
                 ruta: "img/slide3.png", desc: "Ya estás listo para empezar. Vamos..."
@@ -82,3 +82,7 @@ addEventListener("online", () => {
 if(!navigator.onLine){
     datos.detectarArchivo("guardadas.html") || accion.notificar("Sin conexión: solo es posible acceder a las películas guardadas", 4000, "div-noticia-mala");
 }
+
+addEventListener("load", () => {
+    accion.romperCarga();
+})

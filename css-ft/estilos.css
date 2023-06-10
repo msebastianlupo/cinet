@@ -180,6 +180,10 @@ footer{
     background: rgba(100, 0, 0, 0.7);
 }
 
+.div-noticia-inconclusa{
+    background: rgba(50, 50, 0, 0.7);
+}
+
 .div-noticia-buena{
     background: rgba(0, 100, 0, 0.7);
 }
