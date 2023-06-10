@@ -7,8 +7,13 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox
 
 // recursos precacheados
 const precacheados = [
-    '/.*'
-  ];
+    '/*.html',
+    '/*.js',
+    '/*.css',
+    '/*.png',
+    '/*.gif',
+    '/*.ttf'
+];
   
   self.addEventListener('install', (event) => {
     event.waitUntil(caches.open(CACHE_NAME).then((cache) => {
