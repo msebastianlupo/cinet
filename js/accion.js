@@ -135,6 +135,8 @@ class Accion {
         let div = document.createElement("div");
         div.classList.add("div-bloqueado");
         document.body.append(div);
+        div.tabIndex = -1;
+        div.focus();
         setTimeout(() => {
             if(document.querySelector(".div-bloqueado")){
                 this.romperCarga();
