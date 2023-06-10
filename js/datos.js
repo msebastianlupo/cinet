@@ -69,26 +69,31 @@ class Datos {
      * @param {string} titulo de la película a buscar en omdb
      */
     obtenerFichaOmdb(e = null, id, titulo){
-        if(this.loadFunc){
-            this.loadFunc();
-        }
-        try{
-            fetch(`https://www.omdbapi.com/?apikey=8b43f631&t=${titulo}&type=movie`)
-            .then(res => {
-                if(!res.ok){
-                    throw new Error("No se pueden conseguir los datos de la película");
-                }
-                return res.json();
-            })
-            .then(json => {
-                this.generarFicha(id, json);
-                if(e){
-                    e.target.remove();
-                }
-                this.closeFunc();
-            })    
-        }catch(error){
-            
+        if(navigator.onLine){
+            if(this.loadFunc){
+                this.loadFunc();
+            }
+            try{
+                fetch(`https://www.omdbapi.com/?apikey=8b43f631&t=${titulo}&type=movie`)
+                .then(res => {
+                    if(!res.ok){
+                        throw new Error("No se pueden conseguir los datos de la película");
+                    }
+                    return res.json();
+                })
+                .then(json => {
+                    this.generarFicha(id, json);
+                    if(e){
+                        e.target.remove();
+                    }
+                    this.closeFunc();
+                })    
+            }catch(error){
+                
+            }
+        }else{
+            const accion = new Accion("Advertencia");
+            accion.notificar("¡No se puede obtener la información: error en la conexión!", 4000, "div-noticia-mala");
         }
     }
 

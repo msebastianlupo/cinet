@@ -138,7 +138,7 @@ class Accion {
     }
 
     /**
-     * destruye la ca capa creada
+     * destruye la capa creada
      */
     romperCarga(){
         console.info("Tarea finalizada");
@@ -147,4 +147,21 @@ class Accion {
             divBloqueado.remove();
         }
     }
+
+    /**
+     * crea un aviso al usuario y se autodestruye en el tiempo especificado
+     * @param {string} mensaje el aviso
+     * @param {string} tiempo en milisegundos
+     * @param {string} clase css según el tipo de noticia
+     */
+    notificar(mensaje, tiempo, clase){
+        let div = document.createElement("div");
+        div.classList.add("div-noticia", clase);
+        div.innerText = mensaje;
+        document.body.append(div);
+        setTimeout(() => {
+            div.remove();
+        }, tiempo);
+    }
 }
+
