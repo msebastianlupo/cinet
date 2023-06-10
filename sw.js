@@ -7,8 +7,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox
 
 // recursos precacheados
 const precacheados = [
-    '/guardadas.html',
-    '/trailers.html',
+    '/*.html'
   ];
   
   self.addEventListener('install', (event) => {
