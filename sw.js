@@ -4,6 +4,20 @@ const CACHE_NAME = "v1";
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-sw.js');
 
+
+// recursos precacheados
+const precacheados = [
+    '/guardadas.html',
+    '/trailers.html',
+  ];
+  
+  self.addEventListener('install', (event) => {
+    event.waitUntil(caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(precacheados);
+    }));
+  });       
+
+
 self.addEventListener("message", event => {
     if(event.data && event.data.type == "SKIP_WAITING"){
         self.skipWaiting();
