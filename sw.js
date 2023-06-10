@@ -19,11 +19,7 @@ const precacheados = [
     '/img/logo.png',
     '/img/menu.png',
     '/img/no-disponible.png',
-    '/img/siguiente.png',
-    '/js/accion.js',
-    '/js/datos.js',
-    '/js/principal.js',
-    '/js/youtube.js'
+    '/img/siguiente.png'
 ];
   
 self.addEventListener('install', (event) => {
