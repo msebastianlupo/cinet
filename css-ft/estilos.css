@@ -316,8 +316,11 @@ footer{
     text-align: right;
 }
 
-.div-ficha-cont p:last-of-type{
-    padding-bottom: 2rem;
+.div-ficha-cont a{
+    margin: 1rem 0 2rem;
+    padding: 0.5rem 2rem 0;
+    color: #0ff;
+    font-size: 1.4rem;
 }
 
 .h2-peli-guardada{

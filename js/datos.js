@@ -101,7 +101,7 @@ class Datos {
      * inserta los datos disponibles de una película en un elemento html
      * @param {string} id del item a a poblar
      * @param {object} json de la película a mostrar
-     * @param {string} btn un texto para el título de la imagen guardar. opcional
+     * @param {string} btn un texto para el título de la imagen a guardar. opcional
      */
     generarFicha(id, json, btn = ""){
         let elemento = document.querySelector("#" + id),
@@ -115,6 +115,7 @@ class Datos {
         pEscritor = document.createElement("p"),
         pActores = document.createElement("p"),
         pSinopsis = document.createElement("p"),
+        aEnlace = document.createElement("a"),
         button = document.createElement("button");
         imgGuardar.classList.add("img-guardar");
         imgGuardar.src = "img/guardado.png";
@@ -128,10 +129,13 @@ class Datos {
         pEscritor.innerText = `Escritor: ${json.Writer}`;
         pActores.innerText = `Actores: ${json.Actors}`;
         pSinopsis.innerText = `Sinópsis: ${json.Plot}`;
+        aEnlace.href = `https://imdb.com/title/${id}`;
+        aEnlace.innerText = "Ficha en IMDb";
+        aEnlace.target = "_blank";
         button.innerText = "Información";
         button.classList.add("btn-buscar-ficha", "controlable");
         pGuardar.append(imgGuardar);
-        elemento.append(pGuardar, pTitulo, pEstreno, pDuracion, pGenero, pDirector, pEscritor, pActores, pSinopsis, button);
+        elemento.append(pGuardar, pTitulo, pEstreno, pDuracion, pGenero, pDirector, pEscritor, pActores, pSinopsis, aEnlace, button);
         imgGuardar.addEventListener("load", () => {
             if(this.checkearGuardado(json)){
                 imgGuardar.classList.add("opacidad-5");
@@ -148,9 +152,11 @@ class Datos {
     alternarDatos(e){
         let elemento = document.querySelector("#" + e.target.parentNode.id);
         let listaP = elemento.querySelectorAll("p");
+        let a = elemento.querySelector("a");
         for(let p of listaP){
             p.classList.toggle("no-visible");
         }
+        a.classList.toggle("no-visible");
     }
 
     /**
